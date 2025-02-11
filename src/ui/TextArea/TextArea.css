@@ -1,0 +1,22 @@
+/* Kontener dla całego komponentu */
+.textarea-container {
+  display: flex;
+}
+
+/* Stylowanie samego textarea */
+.custom-textarea {
+  width: 100vw;
+  max-width: 600px;
+  height: 20vh;
+  max-height: 80vh;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.custom-textarea:focus {
+  border-color: #008000;
+}

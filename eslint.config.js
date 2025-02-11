@@ -13,7 +13,20 @@ export default [
   {
     rules: {
       "no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
       "no-undef": "warn",
+      "react/react-in-jsx-scope": "off",
+      "jsx-quotes": ["error", "prefer-double"],
+      "react-hooks/exhaustive-deps": "warn",
+      "react/display-name": "off",
     },
   },
   {
