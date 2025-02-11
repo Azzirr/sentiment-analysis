@@ -1,9 +1,7 @@
-/* Kontener dla całego komponentu */
 .textarea-container {
   display: flex;
 }
 
-/* Stylowanie samego textarea */
 .custom-textarea {
   width: 100vw;
   max-width: 600px;

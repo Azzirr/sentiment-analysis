@@ -18,7 +18,6 @@ body.active-modal {
   background: rgba(49, 49, 49, 0.8);
 }
 
-/* Kontener modalny */
 .modal-content {
   background: #f3f3f3;
   padding: 20px;
