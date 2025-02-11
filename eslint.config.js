@@ -17,10 +17,12 @@ export default [
     },
   },
   {
-    compilerOptions: {
-      baseUrl: ".",
-      paths: {
-        "@/*": ["src/*"],
+    settings: {
+      "import/resolver": {
+        alias: {
+          map: [["@", "./src"]],
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
+        },
       },
     },
   },
