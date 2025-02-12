@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./TextArea.css";
 
 interface TextAreaProps {
@@ -6,6 +5,8 @@ interface TextAreaProps {
   placeholder?: string;
   maxLength?: number;
   minLength?: number;
+  value?: string;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export const TextArea: React.FC<TextAreaProps> = ({
@@ -13,19 +14,15 @@ export const TextArea: React.FC<TextAreaProps> = ({
   placeholder,
   maxLength,
   minLength,
+  value,
+  onChange,
 }) => {
-  const [text, setText] = useState<string>("");
-
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value);
-  };
-
   return (
     <div className="textarea-container">
       <textarea
         className={`custom-textarea ${className}`}
-        value={text}
-        onChange={handleChange}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
         maxLength={maxLength}
         minLength={minLength}

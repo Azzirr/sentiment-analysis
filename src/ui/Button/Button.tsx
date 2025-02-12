@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import "./Button.css";
 
 interface ButtonProps {
   children: string;
   className?: string;
-  onClick?: any;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button: React.FC<ButtonProps> = ({

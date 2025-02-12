@@ -1,28 +1,26 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import "./Modal.css";
-import { Button } from "../Button/Button";
 import { XCircleIcon } from "@heroicons/react/24/solid";
+
 interface ModalProps {
   children: ReactNode;
+  isOpen: boolean;
+  closeModal: () => void;
 }
 
-export const Modal: React.FC<ModalProps> = ({ children }) => {
-  const [modal, setModal] = useState(false);
-
-  const toggleModal = () => {
-    setModal(!modal);
-  };
-
+export const Modal: React.FC<ModalProps> = ({
+  children,
+  isOpen,
+  closeModal,
+}) => {
   return (
     <>
-      <Button onClick={toggleModal}>Analizuj</Button>
-
-      {modal && (
+      {isOpen && (
         <div className="modal">
-          <div onClick={toggleModal} className="overlay"></div>
+          <div onClick={closeModal} className="overlay"></div>
           <div className="modal-content">
             {children}
-            <XCircleIcon onClick={toggleModal} className="close-modal" />
+            <XCircleIcon onClick={closeModal} className="close-modal" />
           </div>
         </div>
       )}
