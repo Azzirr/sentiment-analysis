@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+# Sentiment Analysis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An application for text sentiment analysis using the Hugging Face model.
 
-Currently, two official plugins are available:
+## How to Run?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository using command line:
+   ```sh
+   git clone https://github.com/Azzirr/sentiment-analysis.git
+   ```
+2. Navigate to the project folder:
+   ```sh
+   cd sentiment-analysis
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Create .env file and add your API key (without this key, request will not work):
+   ```sh
+   VITE_HUGGINGFACE_API_KEY=your_api_key
+   ```
+5. Start the application:
+   ```sh
+   npm run dev
+   ```
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project is built using:
 
-- Configure the top-level `parserOptions` property like this:
+#### React 19 – a modern framework for building user interfaces.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+#### TypeScript – a superset of JavaScript that provides static typing.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+#### Vite – a fast front-end build tool.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+#### Prettier – a code formatting tool.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+#### ESLint – a linter to detect errors in the code.
+
+#### Husky – a tool for automating Git tasks (e.g., running linters before commits).
+
+## Challenges
+
+### 1. Choosing the API communication method
+
+Several approaches were considered for making requests to the Hugging Face API:
+
+- GraphQL,
+- Fetch API,
+- Axios,
+- A dedicated Hugging Face library ([documentation](https://huggingface.co/docs/inference-endpoints/guides/test_endpoint)).
+- Ultimately, fetch() was chosen because the application only makes a single request, making additional libraries unnecessary overhead.
+
+### 2. Application structure and component reusability
+
+A key decision was whether the project should be designed for easy scalability. In the end, reusable components like Button, Modal, and TextArea were created. These:
+
+- include only essential functionality for the current state,
+- are easy to extend in the future,
+- have their own CSS files, avoiding redundant styling in different places.
+
+This makes the codebase cleaner, more modular, and easier to maintain.
+
+### 3. UI Design Without Prebuilt Component Libraries
+
+Another challenge was designing UI components from scratch since no prebuilt libraries like Shadcn, Material UI, or Chakra UI were used. This required a forward-thinking approach to ensure that the components would be flexible and scalable while still being visually consistent and maintainable.
