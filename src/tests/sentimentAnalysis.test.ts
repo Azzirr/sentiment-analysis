@@ -1,5 +1,9 @@
 import { fetchData } from "../api/sentimentAnalysis";
 
+jest.mock("../constants", () => ({
+  VITE_HUGGINGFACE_API_KEY: "mocked-api-key",
+}));
+
 global.fetch = jest.fn() as jest.Mock;
 
 describe("fetchData tests", () => {

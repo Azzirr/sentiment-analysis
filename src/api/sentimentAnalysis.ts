@@ -1,3 +1,5 @@
+import { VITE_HUGGINGFACE_API_KEY } from "../constants";
+
 export const fetchData = async (userInput: string) => {
   if (!userInput) return { error: "Wprowadź tekst do analizy!" };
 
@@ -7,7 +9,7 @@ export const fetchData = async (userInput: string) => {
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_HUGGINGFACE_API_KEY}`,
+          Authorization: `Bearer ${VITE_HUGGINGFACE_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ inputs: userInput }),
