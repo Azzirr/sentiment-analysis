@@ -2,7 +2,7 @@
 
 An application for text sentiment analysis using the Hugging Face model.
 
-## How to Run?
+## How to run?
 
 1. Clone the repository using command line:
    ```sh
@@ -73,6 +73,6 @@ A key decision was whether the project should be designed for easy scalability. 
 
 This makes the codebase cleaner, more modular, and easier to maintain.
 
-### 3. UI Design Without Prebuilt Component Libraries
+### 3. UI design without prebuilt component libraries
 
 Another challenge was designing UI components from scratch since no prebuilt libraries like Shadcn, Material UI, or Chakra UI were used. This required a forward-thinking approach to ensure that the components would be flexible and scalable while still being visually consistent and maintainable.
