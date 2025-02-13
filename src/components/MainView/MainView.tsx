@@ -73,7 +73,7 @@ export const MainView: React.FC = () => {
             <p>{sentimentDescriptions[analysisResult.label].description}</p>
             {sentimentDescriptions[analysisResult.label].proTip && (
               <p>
-                <strong>Pro Tip:</strong>{" "}
+                <strong>Pro Tip:</strong>
                 {sentimentDescriptions[analysisResult.label].proTip}
               </p>
             )}

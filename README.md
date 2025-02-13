@@ -25,6 +25,14 @@ An application for text sentiment analysis using the Hugging Face model.
    npm run dev
    ```
 
+## Tests
+
+To run tests use:
+
+```sh
+npm test
+```
+
 ## Technologies
 
 This project is built using:
@@ -34,6 +42,8 @@ This project is built using:
 #### TypeScript – a superset of JavaScript that provides static typing.
 
 #### Vite – a fast front-end build tool.
+
+#### Jest - a JavaScript testing framework.
 
 #### Prettier – a code formatting tool.
 
